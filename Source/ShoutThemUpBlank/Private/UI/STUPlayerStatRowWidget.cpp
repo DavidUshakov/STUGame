@@ -45,7 +45,7 @@ void USTUPlayerStatRowWidget::SetTeam(const FText &Text)
     TeamTextBlock->SetText(Text);
 }
 
-void USTUPlayerStatRowWidget::SetPlayerIndicatorVisibility(bool Visible)
+void USTUPlayerStatRowWidget::SetPlayerIndicatorVisibility(const bool Visible)
 {
     if (!PlayerIndicatorImage)
     {

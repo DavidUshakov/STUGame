@@ -12,7 +12,7 @@ USTUFireBTService::USTUFireBTService()
 }
 
 void USTUFireBTService::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory,
-    float DeltaSeconds) 
+    const float DeltaSeconds) 
 {
     Super::TickNode(OwnerComp, NodeMemory, DeltaSeconds);
 

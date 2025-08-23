@@ -2,11 +2,9 @@
 
 #include "STUBaseCharacter.h"
 #include "Components/STUWeaponComponent.h"
-#include "Components/TextRenderComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "STUHealthComponent.h"
-#include "Components/STUWeaponComponent.h"
 #include "Components/CapsuleComponent.h"
 
 DEFINE_LOG_CATEGORY_STATIC(LogBaseCharacter, All, All);

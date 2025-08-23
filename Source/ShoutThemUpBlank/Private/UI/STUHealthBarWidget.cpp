@@ -3,7 +3,7 @@
 #include "UI/STUHealthBarWidget.h"
 #include "Components/ProgressBar.h"
 
-void USTUHealthBarWidget::SetHealthPercent(float Percent)
+void USTUHealthBarWidget::SetHealthPercent(const float Percent)
 {
     if (!HealthProgressBar)
     {

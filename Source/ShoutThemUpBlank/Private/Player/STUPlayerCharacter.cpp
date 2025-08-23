@@ -74,27 +74,27 @@ void ASTUPlayerCharacter::SetupPlayerInputComponent(UInputComponent *PlayerInput
 }
 
 
-void ASTUPlayerCharacter::MoveForward(float Amount)
+void ASTUPlayerCharacter::MoveForward(const float Amount)
 {
     AddMovementInput(GetActorForwardVector(), Amount * 0.5);
 }
 
-void ASTUPlayerCharacter::MoveRight(float Amount)
+void ASTUPlayerCharacter::MoveRight(const float Amount)
 {
     AddMovementInput(GetActorRightVector(), Amount * 0.5);
 }
 
-void ASTUPlayerCharacter::LookUp(float Amount)
+void ASTUPlayerCharacter::LookUp(const float Amount)
 {
     AddControllerPitchInput(Amount);
 }
 
-void ASTUPlayerCharacter::TurnAround(float Amount)
+void ASTUPlayerCharacter::TurnAround(const float Amount)
 {
     AddControllerYawInput(Amount);
 }
 
-void ASTUPlayerCharacter::Run(volatile float Amount)
+void ASTUPlayerCharacter::Run(const volatile float Amount)
 {
     FVector ActorMovement = GetPendingMovementInputVector();
     if (!ActorMovement.Equals(FVector(0, 0, 0)))

@@ -22,7 +22,7 @@ public:
 
     void SetLevelData(const FLevelData &Data);
 
-    FLevelData GetLevelData()
+    FLevelData GetLevelData() const
     {
         return LevelData;
     }

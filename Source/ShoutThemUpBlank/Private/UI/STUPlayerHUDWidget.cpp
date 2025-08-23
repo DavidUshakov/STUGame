@@ -7,7 +7,6 @@
 #include "Player/STUPlayerState.h"
 #include "STUGameModeBase.h"
 #include "Components/ProgressBar.h"
-#include "Player/STUPlayerState.h"
 
 float USTUPlayerHUDWidget::GetHealthPercent() const
 {
@@ -122,10 +121,10 @@ int32 USTUPlayerHUDWidget::GetKillsNum() const
     return PlayerState ? PlayerState->GetKillsNum() : 0;
 }
 
-FString USTUPlayerHUDWidget::FormatBullets(int32 BulletsNum) const
+FString USTUPlayerHUDWidget::FormatBullets(const int32 BulletsNum) const
 {
-    const int32 MaxLen = 3;
-    const TCHAR PrefixSymbol = '0';
+    constexpr int32 MaxLen = 3;
+    constexpr TCHAR PrefixSymbol = '0';
 
     auto BulletStr = FString::FromInt(BulletsNum);
     const auto SymbolsNumToAdd = MaxLen - BulletStr.Len();
@@ -150,7 +149,7 @@ void USTUPlayerHUDWidget::NativeOnInitialized()
 
 }
 
-void USTUPlayerHUDWidget::OnHealthChanged(float Health, float HealthDelta)
+void USTUPlayerHUDWidget::OnHealthChanged(float Health, const float HealthDelta)
 {
     if (HealthDelta < 0.0f)
     {

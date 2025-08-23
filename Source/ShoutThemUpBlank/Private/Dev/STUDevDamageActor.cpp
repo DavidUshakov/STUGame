@@ -21,7 +21,7 @@ void ASTUDevDamageActor::BeginPlay()
 }
 
 // Called every frame
-void ASTUDevDamageActor::Tick(float DeltaTime)
+void ASTUDevDamageActor::Tick(const float DeltaTime)
 {
     Super::Tick(DeltaTime);
 

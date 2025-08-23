@@ -1,7 +1,6 @@
 // DU INC
 
 #include "STUHealthComponent.h"
-#include "Kismet/GameplayStatics.h"
 #include "GameFramework/Controller.h"
 #include "Engine/World.h"
 #include "TimerManager.h"
@@ -23,7 +22,7 @@ USTUHealthComponent::USTUHealthComponent()
     // ...
 }
 
-bool USTUHealthComponent::TryToAddHealth(int32 HealthAmount)
+bool USTUHealthComponent::TryToAddHealth(const int32 HealthAmount)
 {
     if (IsDead() || IsHealthFull() || HealthAmount <= 0)
     {
@@ -190,7 +189,7 @@ float USTUHealthComponent::GetPointDamageModifier(AActor *DamagedActor, const FN
     return DamageModifiers[PhysMaterial];
 }
 
-void USTUHealthComponent::ReportDamageEvent(float Damage, AController *InstigatedBy)
+void USTUHealthComponent::ReportDamageEvent(const float Damage, const AController *InstigatedBy)
 {
     if (!InstigatedBy || !InstigatedBy->GetPawn() || !GetOwner())
     {

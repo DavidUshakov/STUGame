@@ -7,7 +7,7 @@
 #include "Perception/AISenseConfig_Sight.h"
 #include "Perception/AISense_Damage.h"
 
-AActor *USTUAIPerceptionComponent::GetClosestEnemy()
+AActor *USTUAIPerceptionComponent::GetClosestEnemy() const
 {
     TArray<AActor *> PerceiveActors;
     GetCurrentlyPerceivedActors(UAISense_Sight::StaticClass(), PerceiveActors);

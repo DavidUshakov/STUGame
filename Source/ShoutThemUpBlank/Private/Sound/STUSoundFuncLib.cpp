@@ -5,14 +5,14 @@
 
 DEFINE_LOG_CATEGORY_STATIC(LogSTUSoundFuncLib, All, All);
 
-void USTUSoundFuncLib::SetSoundClassVolume(USoundClass *SoundClass, float volume)
+void USTUSoundFuncLib::SetSoundClassVolume(USoundClass *SoundClass, const float Volume)
 {
     if (!SoundClass)
     {
         return;
     }
 
-    SoundClass->Properties.Volume = FMath::Clamp(volume, 0.0f, 1.0f);
+    SoundClass->Properties.Volume = FMath::Clamp(Volume, 0.0f, 1.0f);
     UE_LOG(LogSTUSoundFuncLib, Display, TEXT("Sound class volume was changed: %s = %f"), *SoundClass->GetName(),
            SoundClass->Properties.Volume)
 }

@@ -16,8 +16,7 @@ class SHOUTTHEMUPBLANK_API ASTUAICharacter : public ASTUBaseCharacter
     GENERATED_BODY()
 
 public:
-
-    ASTUAICharacter(const FObjectInitializer &ObjInit);
+    explicit ASTUAICharacter(const FObjectInitializer &ObjInit);
 
     virtual void Tick(float DeltaTime) override;
 

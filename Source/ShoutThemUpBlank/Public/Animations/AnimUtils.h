@@ -1,6 +1,6 @@
 #pragma once
 
-class AnimUtils
+class FAnimUtils
 {
   public:
      template <typename T> 

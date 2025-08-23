@@ -11,7 +11,7 @@ USTUFindEnemyService::USTUFindEnemyService()
     NodeName = "Find Enemy";
 }
 
-void USTUFindEnemyService::TickNode(UBehaviorTreeComponent &OwnerComp, uint8 *NodeMemory, float DeltaSeconds)
+void USTUFindEnemyService::TickNode(UBehaviorTreeComponent &OwnerComp, uint8 *NodeMemory, const float DeltaSeconds)
 {
     Super::TickNode(OwnerComp, NodeMemory, DeltaSeconds);
 

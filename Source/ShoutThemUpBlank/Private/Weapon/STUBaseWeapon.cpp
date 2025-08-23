@@ -7,7 +7,6 @@
 #include "GameFramework/Character.h"
 #include "GameFramework/Controller.h"
 #include "NiagaraFunctionLibrary.h"
-#include "NiagaraComponent.h"
 
 DEFINE_LOG_CATEGORY_STATIC(LogBaseWeapon, All, All);
 
@@ -66,7 +65,7 @@ bool ASTUBaseWeapon::CanReload() const
     return CurrentAmmo.Clips >0 && CurrentAmmo.Bullets < DefaultAmmo.Bullets;
 }
 
-bool ASTUBaseWeapon::TryToAddAmmo(int32 ClipsAmount)
+bool ASTUBaseWeapon::TryToAddAmmo(const int32 ClipsAmount)
 {
     if (CurrentAmmo.Infinite || IsAmmoFull() || ClipsAmount <= 0)
     {

@@ -14,6 +14,6 @@ class SHOUTTHEMUPBLANK_API USTUAIPerceptionComponent : public UAIPerceptionCompo
     GENERATED_BODY()
 
 public:
-    AActor *GetClosestEnemy();
+    AActor *GetClosestEnemy() const;
 
 };

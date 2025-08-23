@@ -28,7 +28,7 @@ ASTUAICharacter::ASTUAICharacter(const FObjectInitializer &ObjInit)
     HealthWidgetComponent->SetDrawAtDesiredSize(true);
 }
 
-void ASTUAICharacter::Tick(float DeltaTime)
+void ASTUAICharacter::Tick(const float DeltaTime)
 {
     Super::Tick(DeltaTime);
     UpdateHealthWidgetVisibility();
@@ -52,7 +52,7 @@ void ASTUAICharacter::OnDeath()
     }
 }
 
-void ASTUAICharacter::OnHealthChanged(float Health, float HealthDelta)
+void ASTUAICharacter::OnHealthChanged(const float Health, const float HealthDelta)
 {
     Super::OnHealthChanged(Health, HealthDelta);
 

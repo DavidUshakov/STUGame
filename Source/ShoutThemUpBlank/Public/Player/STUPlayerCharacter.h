@@ -17,7 +17,7 @@ class SHOUTTHEMUPBLANK_API ASTUPlayerCharacter : public ASTUBaseCharacter
     GENERATED_BODY()
 
 public:
-    ASTUPlayerCharacter(const FObjectInitializer &ObjInit);
+    explicit ASTUPlayerCharacter(const FObjectInitializer &ObjInit);
 
     // Called to bind functionality to input
     virtual void SetupPlayerInputComponent(class UInputComponent *PlayerInputComponent) override;

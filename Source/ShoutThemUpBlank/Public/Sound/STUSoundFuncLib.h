@@ -16,7 +16,7 @@ class SHOUTTHEMUPBLANK_API USTUSoundFuncLib : public UBlueprintFunctionLibrary
 
 public:
     UFUNCTION(BlueprintCallable)
-    static void SetSoundClassVolume(USoundClass *SoundClass, float volume);
+    static void SetSoundClassVolume(USoundClass *SoundClass, float Volume);
 
     UFUNCTION(BlueprintCallable)
     static void ToggleSoundClassVolume(USoundClass *SoundClass);

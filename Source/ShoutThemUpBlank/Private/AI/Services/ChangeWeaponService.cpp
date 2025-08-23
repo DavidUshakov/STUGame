@@ -2,7 +2,6 @@
 
 #include "AI/Services/ChangeWeaponService.h"
 #include "AIController.h"
-#include "BehaviorTree/BlackboardComponent.h"
 #include "Components/STUWeaponComponent.h"
 #include "STUUtils.h"
 
@@ -11,7 +10,7 @@ UChangeWeaponService::UChangeWeaponService()
     NodeName = "Change Weapon";
 }
 
-void UChangeWeaponService::TickNode(UBehaviorTreeComponent &OwnerComp, uint8 *NodeMemory, float DeltaSeconds)
+void UChangeWeaponService::TickNode(UBehaviorTreeComponent &OwnerComp, uint8 *NodeMemory, const float DeltaSeconds)
 {
     Super::TickNode(OwnerComp, NodeMemory, DeltaSeconds);
 

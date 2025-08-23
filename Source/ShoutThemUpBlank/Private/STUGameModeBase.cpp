@@ -46,7 +46,7 @@ UClass *ASTUGameModeBase::GetDefaultPawnClassForController_Implementation(AContr
     return Super::GetDefaultPawnClassForController_Implementation(InController);
 }
 
-void ASTUGameModeBase::Killed(AController *KillerController, AController *VictimController)
+void ASTUGameModeBase::Killed(const AController *KillerController, AController *VictimController)
 {
     const auto KillerPlayerState = KillerController ? Cast<ASTUPlayerState>(KillerController->PlayerState) : nullptr;
     const auto VictimPlayerState = VictimController ? Cast<ASTUPlayerState>(VictimController->PlayerState) : nullptr;
@@ -69,7 +69,7 @@ void ASTUGameModeBase::RespawnRequest(AController *Controller)
     ResetOnePlayer(Controller);
 }
 
-bool ASTUGameModeBase::SetPause(APlayerController *PC, FCanUnpause CanUnpauseDelegate)
+bool ASTUGameModeBase::SetPause(APlayerController *PC, const FCanUnpause CanUnpauseDelegate)
 {
     const auto PauseSet = Super::SetPause(PC, CanUnpauseDelegate);
     if (PauseSet)
@@ -189,7 +189,7 @@ void ASTUGameModeBase::CreateTeamsInfo()
     }
 }
 
-FLinearColor ASTUGameModeBase::DetermineColorByTeamID(int32 TeamID) const
+FLinearColor ASTUGameModeBase::DetermineColorByTeamID(const int32 TeamID) const
 {
     if (TeamID - 1 < GameData.TeamColors.Num())
     {
@@ -271,7 +271,7 @@ void ASTUGameModeBase::GameOver()
     UE_LOG(LogSTUGameModeBase, Display, TEXT("----------------GAME OVER----------------"));
     LogPlayerInfo();
 
-    for (auto Pawn : TActorRange<APawn>(GetWorld()))
+    for (const auto Pawn : TActorRange<APawn>(GetWorld()))
     {
         if (Pawn)
         {
@@ -283,7 +283,7 @@ void ASTUGameModeBase::GameOver()
     SetMatchState(ESTUMatchState::GameOver);
 }
 
-void ASTUGameModeBase::SetMatchState(ESTUMatchState State)
+void ASTUGameModeBase::SetMatchState(const ESTUMatchState State)
 {
     if (MatchState == State)
     {
@@ -296,7 +296,7 @@ void ASTUGameModeBase::SetMatchState(ESTUMatchState State)
 
 void ASTUGameModeBase::StopAllFire()
 {
-    for (auto Pawn : TActorRange<APawn>(GetWorld()))
+    for (const auto Pawn : TActorRange<APawn>(GetWorld()))
     {
         if (Pawn)
         {

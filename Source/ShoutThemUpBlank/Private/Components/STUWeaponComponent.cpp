@@ -77,7 +77,7 @@ bool USTUWeaponComponent::GetWeaponAmmoData(FAmmoData &AmmoData) const
     return true;
 }
 
-bool USTUWeaponComponent::TryToAddAmmo(TSubclassOf<ASTUBaseWeapon> WeaponType, int32 ClipsAmount)
+bool USTUWeaponComponent::TryToAddAmmo(TSubclassOf<ASTUBaseWeapon> WeaponType, const int32 ClipsAmount)
 {
     for (const auto Weapon : Weapons)
     {
@@ -103,7 +103,7 @@ bool USTUWeaponComponent::NeedAmmo(TSubclassOf<ASTUBaseWeapon> WeaponType)
     return false;
 }
 
-void USTUWeaponComponent::Zoom(bool Enabled)
+void USTUWeaponComponent::Zoom(const bool Enabled)
 {
     if (CurrentWeapon)
     {
@@ -175,7 +175,7 @@ void USTUWeaponComponent::AttachWeaponToSocket(ASTUBaseWeapon* Weapon, USceneCom
     Weapon->AttachToComponent(SceneComponent, AttachmentRules, SocketName);
 }
 
-void USTUWeaponComponent::EquipWeapon(int32 WeaponIndex)
+void USTUWeaponComponent::EquipWeapon(const int32 WeaponIndex)
 {
     if (WeaponIndex < 0 || WeaponIndex >= Weapons.Num())
     {
@@ -220,7 +220,7 @@ void USTUWeaponComponent::PlayAnimMontage(UAnimMontage *Animation)
 
 void USTUWeaponComponent::InitAnimations()
 {
-    auto EquipFinishedNotify = AnimUtils::FindNotifyByClass<USTU_EquipFinishedAnimNotify>(EquipAnimMontage);
+    auto EquipFinishedNotify = FAnimUtils::FindNotifyByClass<USTU_EquipFinishedAnimNotify>(EquipAnimMontage);
     if (EquipFinishedNotify)
     {
         EquipFinishedNotify->OnNotified.AddUObject(this, &USTUWeaponComponent::OnEquipFinished);
@@ -233,7 +233,7 @@ void USTUWeaponComponent::InitAnimations()
 
     for (auto OneWeaponData : WeaponData)
     {
-        auto ReloadFinishedNotify = AnimUtils::FindNotifyByClass<USTUReloadFinishedAnimNotify>(OneWeaponData.ReloadAnimMontage);
+        auto ReloadFinishedNotify = FAnimUtils::FindNotifyByClass<USTUReloadFinishedAnimNotify>(OneWeaponData.ReloadAnimMontage);
         if (!ReloadFinishedNotify)
         {
             UE_LOG(LogWeaponComponent, Error, TEXT("Reload anim notify was not found"));

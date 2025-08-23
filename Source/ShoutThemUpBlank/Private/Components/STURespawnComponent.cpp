@@ -8,7 +8,7 @@ USTURespawnComponent::USTURespawnComponent()
     PrimaryComponentTick.bCanEverTick = false;
 }
 
-void USTURespawnComponent::Respawn(int32 RespawnTime)
+void USTURespawnComponent::Respawn(const int32 RespawnTime)
 {
     if (!GetWorld())
     {

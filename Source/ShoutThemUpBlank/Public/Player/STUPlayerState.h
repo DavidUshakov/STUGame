@@ -13,7 +13,7 @@ class SHOUTTHEMUPBLANK_API ASTUPlayerState : public APlayerState
     GENERATED_BODY()
 
 public:
-    void SetTeamID(int32 ID)
+    void SetTeamID(const int32 ID)
     {
         TeamID = ID;
     }

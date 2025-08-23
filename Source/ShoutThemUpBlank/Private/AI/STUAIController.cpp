@@ -30,7 +30,7 @@ void ASTUAIController::OnPossess(APawn *InPawn)
     RunBehaviorTree(STUCharacter->BehaviorTreeAsset);
 }
 
-void ASTUAIController::Tick(float DeltaTime)
+void ASTUAIController::Tick(const float DeltaTime)
 {
     Super::Tick(DeltaTime);
 

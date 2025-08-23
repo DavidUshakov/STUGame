@@ -102,5 +102,5 @@ class SHOUTTHEMUPBLANK_API USTUHealthComponent : public UActorComponent
     void Killed(AController *Killer);
     void ApplyDamage(float Damage, AController *InstigatedBy);
     float GetPointDamageModifier(AActor *DamagedActor, const FName &BoneName);
-    void ReportDamageEvent(float Damage, AController *InstigatedBy);
+    void ReportDamageEvent(float Damage, const AController *InstigatedBy);
 };

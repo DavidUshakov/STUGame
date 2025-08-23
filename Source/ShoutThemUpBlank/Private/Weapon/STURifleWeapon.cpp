@@ -28,7 +28,7 @@ void ASTURifleWeapon::StopFire()
     GetWorldTimerManager().ClearTimer(ShotTimerHandle);
 }
 
-void ASTURifleWeapon::Zoom(bool Enabled)
+void ASTURifleWeapon::Zoom(const bool Enabled)
 {
     const auto Controller = Cast<APlayerController>(GetController());
     if (!Controller || !Controller->PlayerCameraManager)
@@ -119,7 +119,7 @@ void ASTURifleWeapon::InitMuzzleFX()
     SetMuzzleFXVisibility(true);
 }
 
-void ASTURifleWeapon::SetMuzzleFXVisibility(bool Visible)
+void ASTURifleWeapon::SetMuzzleFXVisibility(const bool Visible)
 {
     if (!MuzzleFXComponent)
     {

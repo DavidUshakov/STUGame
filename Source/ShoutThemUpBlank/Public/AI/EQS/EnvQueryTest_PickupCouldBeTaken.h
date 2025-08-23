@@ -13,7 +13,7 @@ class SHOUTTHEMUPBLANK_API UEnvQueryTest_PickupCouldBeTaken : public UEnvQueryTe
     GENERATED_BODY()
 
 public:
-    UEnvQueryTest_PickupCouldBeTaken(const FObjectInitializer &ObjectInitializer);
+    explicit UEnvQueryTest_PickupCouldBeTaken(const FObjectInitializer &ObjectInitializer);
 
     virtual void RunTest(FEnvQueryInstance &QueryInstance) const override;
 

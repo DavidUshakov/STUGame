@@ -17,7 +17,7 @@ class SHOUTTHEMUPBLANK_API ASTUBaseCharacter : public ACharacter
 
   public:
     // Sets default values for this character's properties
-    ASTUBaseCharacter(const FObjectInitializer &ObjInit);
+    explicit ASTUBaseCharacter(const FObjectInitializer &ObjInit);
 
 
   protected:

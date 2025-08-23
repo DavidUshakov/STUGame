@@ -54,7 +54,7 @@ void ASTUPlayerController::OnPauseGame()
     GetWorld()->GetAuthGameMode()->SetPause(this);
 }
 
-void ASTUPlayerController::OnMatchStateChanged(ESTUMatchState State)
+void ASTUPlayerController::OnMatchStateChanged(const ESTUMatchState State)
 {
     if (State == ESTUMatchState::InProgress)
     {

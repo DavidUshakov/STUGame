@@ -24,7 +24,7 @@ public:
 
     virtual UClass *GetDefaultPawnClassForController_Implementation(AController *InController) override;
 
-    void Killed(AController *KillerController, AController *VictimController);
+    void Killed(const AController *KillerController, AController *VictimController);
 
     int32 GetMaximumRoundsNumber() const
     {

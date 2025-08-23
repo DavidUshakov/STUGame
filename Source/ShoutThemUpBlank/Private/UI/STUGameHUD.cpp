@@ -22,7 +22,7 @@ void ASTUGameHUD::BeginPlay()
     GameWidgets.Add(ESTUMatchState::GameOver, CreateWidget<USTUBaseWidget>(GetWorld(), GameOverWidgetClass));
 
 
-    for (auto GameWidgetPair : GameWidgets)
+    for (const auto GameWidgetPair : GameWidgets)
     {
         const auto GameWidget = GameWidgetPair.Value;
         if (!GameWidget)
@@ -47,15 +47,15 @@ void ASTUGameHUD::BeginPlay()
 void ASTUGameHUD::DrawCrossHair()
 {
     const TInterval<float> Center(Canvas->SizeX * 0.5f, Canvas->SizeY * 0.5f);
-    const float HalfLineSize = 10.0f;
-    const float LineThickness = 2.0f;
+    constexpr float HalfLineSize = 10.0f;
+    constexpr float LineThickness = 2.0f;
     const FLinearColor LineColor = FLinearColor::Green;
 
     DrawLine(Center.Min - HalfLineSize, Center.Max, Center.Min+ HalfLineSize, Center.Max, LineColor, LineThickness);
     DrawLine(Center.Min, Center.Max - HalfLineSize, Center.Min, Center.Max + HalfLineSize, LineColor, LineThickness);
 }
 
-void ASTUGameHUD::OnMatchStateChanged(ESTUMatchState State)
+void ASTUGameHUD::OnMatchStateChanged(const ESTUMatchState State)
 {
     if (CurrentWidget)
     {
